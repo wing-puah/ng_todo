@@ -5,9 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+import { AppLayoutComponent } from './components/app-layout/app-layout.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppLayoutComponent
   ],
   imports: [
     BrowserModule,
