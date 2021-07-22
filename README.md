@@ -2,12 +2,10 @@
 
 ??? https://stackblitz.com/angular/qdbpaxgdeqm dynamic form generator ???
 
-https://angular.io/guide/architecture
-
 - do we need to do declaration before we can import the component into pages?
 - @NgModule is a decorator to export to a single provider or something similar?
 - DI tokens in angular??
-- https://angular.io/api/router/Route#multiple-outlets what is outlets refereing to?
+- https://angular.io/api/router/Route#multiple-outlets what is outlets referring to?
 - query strings in url?
 - life cycle of angular
 - CommonModule??
@@ -31,3 +29,9 @@ https://angular.io/guide/architecture
 
 - subsink
 - rxjs
+
+## Other reading
+
+https://angular.io/guide/architecture
+
+https://fireship.io/lessons/sharing-data-between-angular-components-four-methods/

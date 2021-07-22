@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppLayoutComponent } from '@components/app-layout/app-layout.component';
 import { SidebarComponent } from '@components/sidebar/sidebar.component';
-import { CardComponent } from '@components/card/card.component';
 import { ModalComponent } from '@components/modal/modal.component';
 import { IconButtonComponent } from './components/icon-button/icon-button.component';
 
@@ -20,7 +19,6 @@ import { IconButtonComponent } from './components/icon-button/icon-button.compon
     AppComponent,
     AppLayoutComponent,
     SidebarComponent,
-    CardComponent,
     ModalComponent,
     IconButtonComponent,
   ],
