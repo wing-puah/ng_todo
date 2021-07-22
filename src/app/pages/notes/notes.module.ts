@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 import { CardComponent } from '@components/card/card.component';
 import { NoteEditorComponent } from '@components/note-editor/note-editor.component';
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
     RouterModule.forChild(appRoutes),
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
   ],

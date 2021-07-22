@@ -3,18 +3,18 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 import { ListItem } from '@services/user-actions-service';
 import { NewCard, Card } from '@app/types/common.types';
+import { trimTrailingNulls } from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-note-editor',
   templateUrl: './note-editor.component.html',
-  styleUrls: ['./note-editor.component.scss']
 })
 export class NoteEditorComponent implements OnInit {
   @Input() data: Card;
   @Output() addEvent = new EventEmitter<NewCard>();
   @Output() editEvent = new EventEmitter<Card>();
 
-  myForm = this.fb.group({
+  noteEditorForm = this.fb.group({
     id: [''],
     title: [''],
     value: [''],
@@ -23,11 +23,6 @@ export class NoteEditorComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    // this.myForm = this.fb.group({
-    //   id: [this.data?.id],
-    //   title: [this.data?.title],
-    //   value: [this.data?.value],
-    // });
   }
 
   get isExisting() {
@@ -41,26 +36,36 @@ export class NoteEditorComponent implements OnInit {
   }
 
   get id() {
-    return this.myForm.get('id');
+    return this.noteEditorForm.get('id');
   }
   get title() {
-    return this.myForm.get('title');
+    return this.noteEditorForm.get('title');
   }
   get value() {
-    return this.myForm.get('value');
+    return this.noteEditorForm.get('value');
   }
 
   getFormValue(): Card | NewCard {
-    return this.myForm.value;
+    return this.noteEditorForm.value;
+  }
+
+  renderSubmissionMsg() {
+    return this.isExisting ? 'Update' : 'Add';
+  }
+
+  onSubmit() {
+    if (this.isExisting) {
+      this.editData();
+    } else {
+      this.addData();
+    }
   }
 
   addData() {
-    console.log('addding', this.myForm.value);
     this.addEvent.emit(this.getFormValue());
   }
 
   editData() {
-    console.log('editData', this.myForm.value);
     this.editEvent.emit();
   }
 };

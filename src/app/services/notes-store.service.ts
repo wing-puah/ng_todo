@@ -21,7 +21,6 @@ export class NotesStoreService {
   }
 
   addNote(newNote: NewCard) {
-    console.log({ newNote });
     this.notes = [
       ...this.notes, { id: this.notes.length + 1, ...newNote }
     ];
