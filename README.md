@@ -17,6 +17,7 @@
 - default generate component / pages folder? (could cd in to the folder to generate, but is there a config that could set the default folders?)
 - difference between module and component
 - what will happen if you don't use APP_INITIALIZER
+- is it required to use rxjs in services?
 
 ---
 

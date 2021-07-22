@@ -1,4 +1,13 @@
 <div>
     <app-note-editor></app-note-editor>
-    <app-card></app-card>
+    <div *ngIf="notesStore?.notes$.length > 0; else noContent">
+        <app-card *ngFor="let note of notesStore.notes$">
+            {{note.title}}
+            {{note.value}}
+        </app-card>
+    </div>
+
+    <ng-template #noContent>
+        No notes yet.
+    </ng-template>
 </div>

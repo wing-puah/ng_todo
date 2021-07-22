@@ -13,7 +13,7 @@ type NewNote = Omit<Note, 'id'>;
 @Injectable({
   providedIn: 'root'
 })
-export class NotesDataService {
+export class NotesStoreService {
   private readonly _notes = new BehaviorSubject<Note[]>([]);
   readonly notes$ = this._notes.asObservable();
 
