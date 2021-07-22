@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NotesStoreService } from '@services/notes-store.service';
+import { NewCard, Card } from '@app/types/common.types';
+
 
 @Component({
   selector: 'app-note',
@@ -16,5 +18,14 @@ export class NotesComponent implements OnInit {
 
   onHover(): void {
 
+  }
+
+
+  onAddNotes(data: NewCard) {
+    console.log({ onAddNotes: data });
+  }
+
+  onEditNotes(data: Card) {
+    console.log({ onEditNotes: data });
   }
 }

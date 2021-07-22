@@ -9,5 +9,16 @@
             <input matInput placeholder="Take a note...">
         </mat-form-field>
     </div>
+
+    <button mat-flat-button color="primary" *ngIf="isExisting; else newButton" (click)="editData()">
+        Update
+    </button>
+
+    <ng-template #newButton>
+        <button (click)="addData()">
+            Add
+        </button>
+    </ng-template>
+
     <app-helper-bar [icons]="initIcons()"></app-helper-bar>
 </div>

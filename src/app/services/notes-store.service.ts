@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-import { Card } from '@app/types/common.types';
+import { NewCard, Card } from '@app/types/common.types';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
-type NewNote = Omit<Card, 'id'>;
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,8 @@ export class NotesStoreService {
     this._notes.next(val);
   }
 
-  addNote(newNote: NewNote) {
+  addNote(newNote: NewCard) {
+    console.log({ newNote });
     this.notes = [
       ...this.notes, { id: this.notes.length + 1, ...newNote }
     ];
@@ -31,6 +32,7 @@ export class NotesStoreService {
   }
 
   editNote(editedNote: Card) {
+    console.log({ editedNote });
     const indexToEdit = this.notes.findIndex(note => note.id === editedNote.id);
     this.notes[indexToEdit] = editedNote;
   }

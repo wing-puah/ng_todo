@@ -4,3 +4,5 @@ export interface Card {
     id: Number;
     label?: String;
 }
+
+export type NewCard = Omit<Card, 'id'>;

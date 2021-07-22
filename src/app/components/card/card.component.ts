@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { Card } from '@app/types/common.types';
+import { NewCard, Card } from '@app/types/common.types';
 
 
 @Component({
@@ -9,12 +9,14 @@ import { Card } from '@app/types/common.types';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  @Input()
-  data: Card;
+  @Input() data: Card;
 
   constructor() { }
 
-  ngOnInit(): void {
+  get isNew() {
+    return this.data?.id;
   }
 
+  ngOnInit(): void {
+  }
 }
