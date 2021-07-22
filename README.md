@@ -39,3 +39,9 @@ https://angular.io/guide/architecture
 https://fireship.io/lessons/sharing-data-between-angular-components-four-methods/
 
 https://dev.to/avatsaev/simple-state-management-in-angular-with-only-services-and-rxjs-41p8
+
+Good for understanding state management
+https://dev.to/avatsaev/simple-state-management-in-angular-with-only-services-and-rxjs-41p8
+
+Components within components
+https://codecraft.tv/courses/angular/quickstart/nesting-components-and-inputs/

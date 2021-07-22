@@ -1,27 +1,22 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-export interface Note {
-  title: String;
-  value: String;
-  id: Number;
-  label?: String;
-}
+import { Card } from '@app/types/common.types';
 
-type NewNote = Omit<Note, 'id'>;
+type NewNote = Omit<Card, 'id'>;
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotesStoreService {
-  private readonly _notes = new BehaviorSubject<Note[]>([]);
+  private readonly _notes = new BehaviorSubject<Card[]>([]);
   readonly notes$ = this._notes.asObservable();
 
-  get notes(): Note[] {
+  get notes(): Card[] {
     return this._notes.getValue();
   }
 
-  private set notes(val: Note[]) {
+  private set notes(val: Card[]) {
     this._notes.next(val);
   }
 
@@ -35,7 +30,7 @@ export class NotesStoreService {
     this.notes = this.notes.filter(note => note.id !== id);
   }
 
-  editNote(editedNote: Note) {
+  editNote(editedNote: Card) {
     const indexToEdit = this.notes.findIndex(note => note.id === editedNote.id);
     this.notes[indexToEdit] = editedNote;
   }
