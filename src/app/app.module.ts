@@ -9,20 +9,20 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-import { AppLayoutComponent } from './components/app-layout/app-layout.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { HelperBarComponent } from './components/helper-bar/helper-bar.component';
-import { CardComponent } from './components/card/card.component';
-import { ModalComponent } from './components/modal/modal.component';
+import { AppLayoutComponent } from '@components/app-layout/app-layout.component';
+import { SidebarComponent } from '@components/sidebar/sidebar.component';
+import { CardComponent } from '@components/card/card.component';
+import { ModalComponent } from '@components/modal/modal.component';
+import { IconButtonComponent } from './components/icon-button/icon-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppLayoutComponent,
     SidebarComponent,
-    HelperBarComponent,
     CardComponent,
     ModalComponent,
+    IconButtonComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { IconButton } from '@services/user-actions-service';
 
 @Component({
   selector: 'app-icon-button',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./icon-button.component.scss']
 })
 export class IconButtonComponent implements OnInit {
+  @Input()
+  icon: IconButton;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+    console.log({ icon: this.icon });
   }
 
 }

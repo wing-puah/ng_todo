@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { IconButton } from '@services/user-actions-service';
 
 @Component({
   selector: 'app-helper-bar',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./helper-bar.component.scss']
 })
 export class HelperBarComponent implements OnInit {
+  @Input()
+  icons: IconButton[];
 
   constructor() { }
 

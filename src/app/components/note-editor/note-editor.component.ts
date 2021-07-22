@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-// import { HelperBarComponent } from '@components/helper-bar/helper-bar.component';
+import { ListItem } from '@services/user-actions-service';
 
 @Component({
   selector: 'app-note-editor',
@@ -15,4 +15,10 @@ export class NoteEditorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
+  initIcons(): ListItem[] {
+    return [{
+      title: 'test', icon: '<div></div>', onClick: e => console.log(e)
+    }];
+
+  }
+};
