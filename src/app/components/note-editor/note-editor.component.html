@@ -1,14 +1,14 @@
 <div>
     note-editor works!
-    <div>
+    <form [formGroup]="myForm">
         <mat-form-field appearance="outline">
-            <input matInput placeholder="Title">
+            <input matInput placeholder="Title" type="text" id="title" formControlName="title">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <input matInput placeholder="Take a note...">
+            <input matInput placeholder="Take a note..." type="text" id="value" formControlName="value">
         </mat-form-field>
-    </div>
+    </form>
 
     <button mat-flat-button color="primary" *ngIf="isExisting; else newButton" (click)="editData()">
         Update
@@ -21,4 +21,5 @@
     </ng-template>
 
     <app-helper-bar [icons]="initIcons()"></app-helper-bar>
+
 </div>

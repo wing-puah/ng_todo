@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
@@ -19,7 +20,13 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [NotesComponent, NoteEditorComponent, HelperBarComponent, CardComponent],
-  imports: [CommonModule, RouterModule.forChild(appRoutes), MatFormFieldModule, MatInputModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(appRoutes),
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
-
 export class NotesModule { }

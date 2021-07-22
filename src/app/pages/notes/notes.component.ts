@@ -23,9 +23,11 @@ export class NotesComponent implements OnInit {
 
   onAddNotes(data: NewCard) {
     console.log({ onAddNotes: data });
+    this.notesStore.addNote(data);
   }
 
   onEditNotes(data: Card) {
     console.log({ onEditNotes: data });
+    this.notesStore.editNote(data);
   }
 }
