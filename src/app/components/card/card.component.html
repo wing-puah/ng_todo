@@ -1,12 +1,12 @@
-<div *appRenderProps="componentProps">
+<div class="m-2">
     <mat-card class="js-card">
         <mat-card-title>{{data.title}}</mat-card-title>
 
         <mat-card-content>
             {{data.value}}
         </mat-card-content>
-        <mat-card-actions *ngIf="actions">
-            {{actions}}
-        </mat-card-actions>
+
+        <div #cardActionsDirective></div>
+        <ng-template cardActionsDirective></ng-template>
     </mat-card>
 </div>

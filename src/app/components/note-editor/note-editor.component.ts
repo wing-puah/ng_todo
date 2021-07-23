@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
-import { ListItem } from '@services/user-actions-service';
+import { ListItem } from '@app/types/user-actions.types';
 import { NewCard, Card } from '@app/types/common.types';
-import { trimTrailingNulls } from '@angular/compiler/src/render3/view/util';
+
 
 @Component({
   selector: 'app-note-editor',

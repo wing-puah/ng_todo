@@ -1,6 +1,7 @@
 helper-bar works!
 <div class="d-flex" *ngIf="icons">
     <div *ngFor="let icon of icons">
-        <div *ngIf="icon" [title]="icon.title" (click)="icon.onClick">{{icon.icon}}</div>
+        <app-icon-button *ngIf="icon" [icon]="icon">
+        </app-icon-button>
     </div>
 </div>

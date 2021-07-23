@@ -1,15 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { IconButton } from '@services/user-actions-service';
+import { IconButton } from '@app/types/user-actions.types';
 
 @Component({
   selector: 'app-icon-button',
   templateUrl: './icon-button.component.html',
-  styleUrls: ['./icon-button.component.scss']
 })
 export class IconButtonComponent implements OnInit {
-  @Input()
-  icon: IconButton;
+  @Input() icon: IconButton;
+  @Input() onClick: EventEmitter<any>;
+  // @Output() handleClick = new EventEmitter();
 
   constructor() {
   }
