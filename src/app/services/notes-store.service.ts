@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 import { NewCard, Card } from '@app/types/common.types';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotesStoreService {
-  private readonly _notes = new BehaviorSubject<Card[]>([]);
+  private readonly _notes = new BehaviorSubject<Card[]>([{
+    id: 1, title: 'eee', value: '11'
+  }]);
   readonly notes$ = this._notes.asObservable();
 
   get notes(): Card[] {

@@ -18,6 +18,8 @@
 - difference between module and component
 - what will happen if you don't use APP_INITIALIZER
 - is it required to use rxjs in services?
+- How to dynamically render html attributes from parent. Will be unknown initially.
+- can you pass a component from parent to child. To give the parent the ability to define the component
 
 ---
 

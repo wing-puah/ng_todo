@@ -1,8 +1,18 @@
 export interface Card {
-    title: String;
-    value: String;
-    id: Number;
-    label?: String;
+    title: string;
+    value: string;
+    id: number;
+    label?: string;
 }
 
 export type NewCard = Omit<Card, 'id'>;
+
+export interface ComponentHtmlAttributes {
+    class?: string[];
+    style?: { [key: string]: string; };
+}
+
+export interface UserDefinedProps {
+    className: string;
+    attributes: ComponentHtmlAttributes;
+}

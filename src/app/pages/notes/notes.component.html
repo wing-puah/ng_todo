@@ -1,7 +1,8 @@
 <div>
     <app-note-editor (addEvent)="onAddNotes($event)" (editEvent)="onEditNotes($event)"></app-note-editor>
     <div *ngIf="notesStore?.notes.length > 0; else noContent">
-        <app-card *ngFor="let note of notesStore.notes" [data]="note">
+        <app-card *ngFor="let note of notesStore.notes" [data]="note" [componentProps]="componentProps"
+            [actions]="actions">
         </app-card>
     </div>
 
