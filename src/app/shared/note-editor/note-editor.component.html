@@ -9,10 +9,9 @@
         </mat-form-field>
     </form>
 
-    <button mat-flat-button color="primary" (click)="onSubmit()">
+    <button mat-flat-button color="primary" class="d-block" (click)="onSubmit()">
         {{renderSubmissionMsg()}}
     </button>
 
-    <div #editorActionsDirective></div>
-    <ng-template editorActionsDirective></ng-template>
+    <ng-content select="app-editor-footer, [app-editor-footer], [appEditorFooter]"></ng-content>
 </div>

@@ -1,18 +1,16 @@
-import { Component, OnInit, Input, Output, EventEmitter, ComponentFactoryResolver, ViewChild } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { Component, OnInit, Input, Output, EventEmitter, ComponentFactoryResolver, Directive } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
-import { ListItem } from '@app/types/user-actions.types';
 import { NewCard, Card } from '@app/types/common.types';
 
-import { EditorActionsDirective } from './note-editor.directive';
+@Directive({ selector: 'app-editor-footer, [app-editor-footer], [appEditorFooter]' })
+export class EditorFooter {}
 
 @Component({
   selector: 'app-note-editor',
   templateUrl: './note-editor.component.html',
 })
 export class NoteEditorComponent implements OnInit {
-  @ViewChild(EditorActionsDirective, { static: true }) editorDirective!: EditorActionsDirective;
-
   @Input() data: Card;
   @Input() actions: any;
   @Output() addEvent = new EventEmitter<NewCard>();
@@ -24,24 +22,9 @@ export class NoteEditorComponent implements OnInit {
     value: [''],
   });
 
-  constructor(private fb: FormBuilder, private componentFactoryResolver: ComponentFactoryResolver) {}
+  constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {
-    this.loadActions();
-  }
-
-  loadActions() {
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.actions.component);
-    const viewContainerRef = this.editorDirective.viewContainerRef;
-    viewContainerRef.clear();
-    const componentRef = viewContainerRef.createComponent<any>(componentFactory);
-
-    if (this.actions.data) {
-      Object.entries(this.actions.data).forEach(([key, value]) => {
-        componentRef.instance[key] = value;
-      });
-    }
-  }
+  ngOnInit(): void {}
 
   get isExisting() {
     return !!this.data?.id;

@@ -7,12 +7,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
-import { RenderPropsDirective } from '@directives/render-props.directive';
+import { HelperBarModule } from '@shared/helper-bar/helper-bar.module';
 import { CardModule } from '@shared/card/card.module';
-import { EditorActionsDirective } from '@app/shared/note-editor/note-editor.directive';
-import { NoteEditorComponent } from '@app/shared/note-editor/note-editor.component';
-import { HelperBarComponent } from '@app/shared/helper-bar/helper-bar.component';
-import { IconButtonComponent } from '@app/shared/icon-button/icon-button.component';
+import { NoteEditorModule } from '@shared/note-editor/note-editor.module';
+import { IconButtonModule } from '@shared/icon-button/icon-button.module';
+
+import { RenderPropsDirective } from '@directives/render-props.directive';
 import { NotesComponent } from './notes.component';
 
 const appRoutes: Routes = [
@@ -23,14 +23,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    NotesComponent,
-    NoteEditorComponent,
-    HelperBarComponent,
-    IconButtonComponent,
-    RenderPropsDirective,
-    EditorActionsDirective,
-  ],
+  declarations: [NotesComponent, RenderPropsDirective],
   imports: [
     CommonModule,
     RouterModule.forChild(appRoutes),
@@ -39,7 +32,10 @@ const appRoutes: Routes = [
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    CardModule
+    CardModule,
+    NoteEditorModule,
+    HelperBarModule,
+    IconButtonModule,
   ],
 })
 export class NotesModule {}

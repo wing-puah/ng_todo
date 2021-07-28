@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, ViewEncapsulation } from '@angular/co
 
 import { NotesStoreService } from '@services/notes-store.service';
 import { NewCard, Card } from '@app/types/common.types';
-import { DynamicChildren } from '@app/components/DynamicChildren';
+import { DynamicChildren } from '@shared/DynamicChildren';
 
 @Component({
   selector: 'app-note',
@@ -23,7 +23,7 @@ export class NotesComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {}
 
   loadComponent(): void {
-    this.actions = this.notesStore.generateNotesHelpers();
+    // this.actions = this.notesStore.generateNotesHelpers();
   }
 
   onHover(): void {}

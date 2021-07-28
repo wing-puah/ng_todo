@@ -1,6 +1,8 @@
 <div>
     <app-note-editor (addEvent)="onAddNotes($event)" (editEvent)="onEditNotes($event)" [actions]="actions">
+        <app-editor-footer>test</app-editor-footer>
     </app-note-editor>
+
     <div *ngIf="notesStore?.notes.length > 0; else noContent">
         <app-card *ngFor="let note of notesStore.notes" [data]="note" [componentProps]="componentProps"
             [actions]="actions">
