@@ -10,21 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 import { AppLayoutComponent } from '@components/app-layout/app-layout.component';
 import { SidebarComponent } from '@components/sidebar/sidebar.component';
 import { ModalComponent } from '@components/modal/modal.component';
-import { IconButtonComponent } from '@components/icon-button/icon-button.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AppLayoutComponent,
-    SidebarComponent,
-    ModalComponent,
-    IconButtonComponent,
-
-  ],
+  declarations: [AppComponent, AppLayoutComponent, SidebarComponent, ModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -33,9 +24,9 @@ import { IconButtonComponent } from '@components/icon-button/icon-button.compone
     ReactiveFormsModule,
     MatFormFieldModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

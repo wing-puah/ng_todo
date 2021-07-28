@@ -8,14 +8,9 @@ import { IconButton } from '@app/types/user-actions.types';
 })
 export class IconButtonComponent implements OnInit {
   @Input() icon: IconButton;
-  @Input() onClick: EventEmitter<any>;
-  // @Output() handleClick = new EventEmitter();
+  @Output() onClick = new EventEmitter<any>();
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-    console.log({ icon: this.icon });
-  }
-
+  ngOnInit(): void {}
 }

@@ -29,6 +29,11 @@
 - factory?
 - what does browserinfo do?
 
+
+--- 
+- can't click on certain icons. 
+
+
 ## Package to look into
 
 - subsink
@@ -47,3 +52,5 @@ https://dev.to/avatsaev/simple-state-management-in-angular-with-only-services-an
 
 Components within components
 https://codecraft.tv/courses/angular/quickstart/nesting-components-and-inputs/
+
+https://angular.io/guide/dynamic-component-loader
