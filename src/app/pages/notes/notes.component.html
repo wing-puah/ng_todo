@@ -4,6 +4,7 @@
     <div *ngIf="notesStore?.notes.length > 0; else noContent">
         <app-card *ngFor="let note of notesStore.notes" [data]="note" [componentProps]="componentProps"
             [actions]="actions">
+            <app-card-actions>testttt</app-card-actions>
         </app-card>
     </div>
 

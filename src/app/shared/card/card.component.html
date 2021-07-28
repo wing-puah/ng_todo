@@ -6,6 +6,7 @@
             {{data.value}}
         </mat-card-content>
 
+        <ng-content select="app-card-actions, [app-card-actions], [appCardActions]"></ng-content>
         <div #cardActionsDirective></div>
         <ng-template cardActionsDirective></ng-template>
     </mat-card>

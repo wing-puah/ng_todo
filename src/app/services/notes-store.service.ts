@@ -5,7 +5,7 @@ import { NewCard, Card } from '@app/types/common.types';
 import { IconButton } from '@app/types/user-actions.types';
 
 import { DynamicChildren } from '@app/components/DynamicChildren';
-import { HelperBarComponent } from '@app/components/helper-bar/helper-bar.component';
+import { HelperBarComponent } from '@app/shared/helper-bar/helper-bar.component';
 
 @Injectable({
   providedIn: 'root'
