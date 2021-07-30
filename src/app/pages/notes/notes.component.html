@@ -1,11 +1,10 @@
 <div>
-    <app-note-editor (addEvent)="onAddNotes($event)" (editEvent)="onEditNotes($event)" [actions]="actions">
+    <app-note-editor (addEvent)="onAddNotes($event)" (editEvent)="onEditNotes($event)">
         <app-editor-footer>test</app-editor-footer>
     </app-note-editor>
 
     <div *ngIf="notesStore?.notes.length > 0; else noContent">
-        <app-card *ngFor="let note of notesStore.notes" [data]="note" [componentProps]="componentProps"
-            [actions]="actions">
+        <app-card *ngFor="let note of notesStore.notes" [data]="note" [componentProps]="componentProps">
             <app-card-actions>testttt</app-card-actions>
         </app-card>
     </div>

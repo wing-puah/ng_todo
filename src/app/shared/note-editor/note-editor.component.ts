@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ComponentFactoryResolver, Directive } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter,  Directive } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 import { NewCard, Card } from '@app/types/common.types';
@@ -12,7 +12,6 @@ export class EditorFooter {}
 })
 export class NoteEditorComponent implements OnInit {
   @Input() data: Card;
-  @Input() actions: any;
   @Output() addEvent = new EventEmitter<NewCard>();
   @Output() editEvent = new EventEmitter<Card>();
 
